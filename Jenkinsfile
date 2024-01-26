@@ -20,20 +20,6 @@ pipeline {
         stage ('Test'){
                 steps {
                 sh "pytest testRoutes.py"
-                
-             script {
-                    echo 'Main Stage 1 - Starting'
-
-                    // Define substages
-                    stage('Substage 1.1') {
-                        echo 'Executing Substage 1.1'
-                    }
-                    stage('Substage 1.2') {
-                        echo 'Executing Substage 1.2'
-                    }
-
-                    echo 'Main Stage 1 - Completed'
-                }
                 }
         }
         
