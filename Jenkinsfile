@@ -21,6 +21,13 @@ pipeline {
                 steps {
                 sh "pytest testRoutes.py"
                 }
+            stages {
+                stage('Building Distributable Package') {
+                    steps {
+                        echo 'Building'
+                    }
+                }
+            }
 
         }
         
