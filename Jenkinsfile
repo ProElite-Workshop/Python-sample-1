@@ -21,6 +21,9 @@ pipeline {
                 steps {
                 sh "pytest testRoutes.py"
                 }
+            steps {
+                sh "pytest testRoutes.py"
+                }
         }
         
         stage ('Clean Up'){
