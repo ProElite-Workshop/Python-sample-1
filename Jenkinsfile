@@ -22,14 +22,17 @@ pipeline {
                 sh "pytest testRoutes.py"
                 
              script {
-                    echo 'Compiling the code...'
-                    // Add your compile commands here
-                }
+                    echo 'Main Stage 1 - Starting'
 
-                // Substage 2: Unit Tests
-                script {
-                    echo 'Running unit tests...'
-                    // Add your unit testing commands here
+                    // Define substages
+                    stage('Substage 1.1') {
+                        echo 'Executing Substage 1.1'
+                    }
+                    stage('Substage 1.2') {
+                        echo 'Executing Substage 1.2'
+                    }
+
+                    echo 'Main Stage 1 - Completed'
                 }
                 }
         }
