@@ -20,15 +20,18 @@ pipeline {
         stage ('Test'){
                 steps {
                 sh "pytest testRoutes.py"
+                
+             script {
+                    echo 'Compiling the code...'
+                    // Add your compile commands here
                 }
-            stages {
-                stage('Building Distributable Package') {
-                    steps {
-                        echo 'Building'
-                    }
-                }
-            }
 
+                // Substage 2: Unit Tests
+                script {
+                    echo 'Running unit tests...'
+                    // Add your unit testing commands here
+                }
+                }
         }
         
         stage ('Clean Up'){
